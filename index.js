@@ -22,10 +22,10 @@ module.exports = {
     length = length || 10
     const generateOptions = options || {}
 
-    generateOptions.digits = Object.prototype.hasOwnProperty.call(generateOptions, 'digits') ? options.digits : true
-    generateOptions.lowerCaseAlphabets = Object.prototype.hasOwnProperty.call(generateOptions, 'lowerCaseAlphabets') ? options.lowerCaseAlphabets : true
-    generateOptions.upperCaseAlphabets = Object.prototype.hasOwnProperty.call(generateOptions, 'upperCaseAlphabets') ? options.upperCaseAlphabets : true
-    generateOptions.specialChars = Object.prototype.hasOwnProperty.call(generateOptions, 'specialChars') ? options.specialChars : true
+    generateOptions.digits ??= true
+    generateOptions.lowerCaseAlphabets ??= true
+    generateOptions.upperCaseAlphabets ??= true
+    generateOptions.specialChars ??= true
 
     const allowsChars = ((generateOptions.digits || '') && digits) +
       ((generateOptions.lowerCaseAlphabets || '') && lowerCaseAlphabets) +
